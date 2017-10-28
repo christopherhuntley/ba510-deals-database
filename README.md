@@ -33,7 +33,7 @@ If all else fails, then RTFM for your version of MySQL and operating system.
 ![Open MySQL Connection](img/img5.png)
 7. __Create the `deals` database from source.__ Use the File menu to open the `deals.sql` script from your repository (shown in the editor window below). Then run the SQL code by clicking the lightening bolt icon (see below).  The 'deals' database should appear in the Schemas panel to the left of the MySQL Workbench screen.  
 ![Copy deals.sql into MySQL Workbench](img/img6.png)  
-8. __Open the `Deals_System_Check.ipynb` file in Jupyter.__ From Anaconda Navigator's `Home` screen, launch Jupyter Notebook. Navigate to the `Deals_System_Check.ipynb` in this folder. Click the file to open it.
+8. __Open the `Deals_Part1.ipynb` notebook.__ From Anaconda Navigator's `Home` screen, launch Jupyter Notebook. Navigate to the `Deals_Part1.ipynb` file (in this folder). Click the file to open it.
 *Take a moment to inspect the code cells, which execute SQL queries embedded in code cells to extract data from our database as Pandas DataFrames.*
 9. __Run the notebook to confirm that everything works.__ You can run the cells one at a time or all at once. You should get two identical listings of companies, one using SQL Alchemy and another using %sql magic.
 10. __Sign your name with new a Markdown cell at the bottom of the notebook.__ You can add new cells with the '+' button at the top of the notebook.
