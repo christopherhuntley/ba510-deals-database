@@ -30,7 +30,7 @@ The file should open in the editor window.
 If all else fails, then RTFM for your version of MySQL and operating system.
 6. __Use MySQL Workbench connect to MySQL Server.__ Select the running MySQL instance (usually on port 3306).
 ![Open MySQL Connection](img/img5.png)
-7. __Create the `deals` database from source.__ Use the File menu to open the `deals.sql` script from your repository. (see below). Then run the SQL code by clicking the lightening bolt icon (see below).  The 'deals' database should appear in the Schemas panel to the left of the MySQL Workbench screen (see below).  
+7. __Create the `deals` database from source.__ Use the File menu to open the `deals.sql` script from your repository (shown in the editor window below). Then run the SQL code by clicking the lightening bolt icon (see below).  The 'deals' database should appear in the Schemas panel to the left of the MySQL Workbench screen.  
 ![Copy deals.sql into MySQL Workbench](img/img6.png)  
 8. __Open the `Deals_System_Check.ipynb` file in Jupyter.__ From Anaconda Navigator's `Home` screen, launch Jupyter Notebook. Navigate to the `Deals_System_Check.ipynb` in this folder. Click the file to open it.
 *Take a moment to inspect the code cells, which execute SQL queries embedded in code cells to extract data from our database as Pandas DataFrames.*
