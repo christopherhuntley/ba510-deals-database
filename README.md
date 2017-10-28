@@ -41,6 +41,6 @@ If all else fails, then RTFM for your version of MySQL and operating system.
 ![Deals_Part1 tables](img/img9.png)
 11. __Sign your name with new a Markdown cell at the bottom of the notebook.__ You can add new cells with the '+' button at the top of the notebook.  
 ![Deals_Part1 edit](img/img10.png)
-12. __Commit and push your work to GitHub.__ In GitHub Desktop commit your changes to the notebook file using the comment 'Completed system check'. Then push (sync) the changes to GitHub. Refresh your web browser to be sure that GitHub accepted your changes.  
+12. __Commit and push your work to GitHub.__ In GitHub Desktop commit your changes to the notebook file using the comment 'Completed Part 1'. Then push (sync) the changes to GitHub. Refresh your web browser to be sure that GitHub accepted your changes.  
 ![Commit Part 1](img/img11.png)
 ![Push Part 1](img/img12.png)
