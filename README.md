@@ -37,9 +37,10 @@ If all else fails, then RTFM for your version of MySQL and operating system.
 ![Open Deals_Part1 notebook](img/img7.png)
 9. __Take a moment to inspect the code cells.__ The cells contain SQL queries embedded in code cells to extract data from our database as Pandas DataFrames.    
 ![Deals_Part1 code cells](img/img8.png)
-10. __Run the notebook to confirm that everything works.__ You can run the cells one at a time or all at once. You should get two identical listings of companies, one using SQL Alchemy and another using %sql magic.
+10. __Run the notebook to confirm that everything works.__ You can run the cells one at a time or all at once. You should get two identical listings of companies, one using SQL Alchemy and another using %sql magic.  
 ![Deals_Part1 tables](img/img9.png)
 11. __Sign your name with new a Markdown cell at the bottom of the notebook.__ You can add new cells with the '+' button at the top of the notebook.  
 ![Deals_Part1 edit](img/img10.png)
 12. __Commit and push your work to GitHub.__ In GitHub Desktop commit your changes to the notebook file using the comment 'Completed system check'. Then push (sync) the changes to GitHub. Refresh your web browser to be sure that GitHub accepted your changes.  
 ![Commit Part 1](img/img11.png)
+![Push Part 1](img/img12.png)
