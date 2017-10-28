@@ -5,16 +5,16 @@ This multipart project is designed to provide practice with software tools and l
 
 __You are encouraged to collaborate with your peers.__ However, you are also responsible for learning the key lessons of each assignment. So, if you need help, ask for it and pay attention to the answers. If you know how to help someone (without doing the work for them), then please help them out.
 
-# Part 1: Systems Check
-## Theory: You should know ...
+## Part 1: Systems Check
+### Theory: You should know ...
 * The purpose and use of each package in your software toolbox
 * How the tools fit together into one seamless development environment
 
-## Practice: You be able to ...
+### Practice: You be able to ...
 * Use the software we installed for this class
 * Verify that the software is working correctly and debug if needed
 
-## Instructions
+### Instructions
 __If any of the steps below fail, then ask for help. Often your best help will come from fellow students.__
 1. __Use GitHub Classroom to create your own fork of this repository.__ GitHub Classroom should send you an invitation email. If not then just click this invitation link. Follow instructions provided by GitHub to link your account to this classroom.
 2. __Clone the repository to your desktop.__ Click the `Clone or Download` link for your forked copy and then select `Open in Desktop`.  
