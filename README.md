@@ -15,6 +15,7 @@ __You are encouraged to collaborate with your peers.__ However, you are also res
 * Verify that the software is working correctly and debug if needed
 
 ## Instructions
+__If any of the steps below fail, then ask for help. Often your best help will come from fellow students.__
 1. __Use GitHub Classroom to create your own fork of this repository.__ GitHub Classroom should send you an invitation email. If not then just click this invitation link. Follow instructions provided by GitHub to link your account to this classroom.
 2. __Clone the repository to your desktop.__ Click the `Clone or Download` link for your forked copy and then select `Open in Desktop`.  
 ![clone to desktop](img/img1.png)  
