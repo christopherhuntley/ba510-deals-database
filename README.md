@@ -35,7 +35,7 @@ If all else fails, then RTFM for your version of MySQL and operating system.
 ![Load deals.sql into MySQL Workbench](img/img6.png)  
 8. __Open the `Deals_Part1.ipynb` notebook.__ From Anaconda Navigator's `Home` screen, launch Jupyter Notebook. Navigate to the `Deals_Part1.ipynb` file (in this folder). Click the file to open it.  
 ![Open Deals_Part1 notebook](img/img7.png)
-9. __Take a moment to inspect the code cells.__ The cells contain SQL queries embedded in code cells to extract data from our database as Pandas DataFrames.    
+9. __Take a moment to inspect the code cells.__ The cells contain SQL queries to extract data from our database and display it all with Pandas DataFrames.    
 ![Deals_Part1 code cells](img/img8.png)
 10. __Run the notebook to confirm that everything works.__ You can run the cells one at a time or all at once. You should get two identical listings of companies, one using SQL Alchemy and another using %sql magic.  
 ![Deals_Part1 tables](img/img9.png)
