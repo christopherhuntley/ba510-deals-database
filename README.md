@@ -139,5 +139,5 @@ ALTER TABLE `tablename`
     ADD FOREIGN KEY (`fk-column`)
        REFERENCES `fk-tablename` (`fk-table-pk`);
 ```  
-where `tablename`,`fk-column`, etc. are replaced with the particulars for the relationship. *Note that the new FK constraints will make our queries run faster but are not strictly needed for SQL joins to work. They can also, however, increase the memory used by the DBMS, so there may actually be rare cases where FK constraints are left undefined.*
+where `tablename`,`fk-column`, etc. are replaced with the particulars for the relationship. *Note that the new FK constraints will make our queries run faster but are not strictly needed for SQL joins to work. They can also, however, increase the memory used by the DBMS, so there may actually be rare cases where FK constraints are best left undefined.*
 4. __Commit and sync to GitHub.__ Don't forget to save your script. Use the Git comment 'Completed Part 3' and push to GitHub.
