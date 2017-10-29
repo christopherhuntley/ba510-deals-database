@@ -44,3 +44,90 @@ If all else fails, then RTFM for your version of MySQL and operating system.
 12. __Commit and push your work to GitHub.__ In GitHub Desktop commit your changes to the notebook file using the comment 'Completed Part 1'. Then push (sync) the changes to GitHub. Refresh your web browser to be sure that GitHub accepted your changes.  
 ![Commit Part 1](img/img11.png)
 ![Push Part 1](img/img12.png)
+
+## Part 2: Select Queries
+### Theory: You should know ...
+* The common forms for SQL SELECT queries
+* Each of the possible SQL SELECT clauses (in the correct order)
+* How WHERE clauses and JOIN ... ON (...) expressions can be used to extract data from multiple tables
+* How to call SQL functions in the SELECT, FROM, and WHERE clauses
+* How to aggregate results into groups of records (with group-wise stats, etc.)
+* How to create a callable View from a SQL Query
+
+### Practice: You be able to ...
+* Write SQL select queries within MySQL Workbench
+* Debug queries based on i) errors reported by the interpreter and ii) your understanding of the source data
+
+### Instructions
+1. __Use MySQL Workbench to check that the server is running.__ Open MySQL Workbench. Then select Server --> Server Status from the menus. If the server is not running then start it using whatever method you used in Part 1. *While you a here, close any editor tabs left open from Part 1.*  
+![Server status](img/img2_1.png)
+2. __Run a test query in Workbench.__ Enter the following into the open editor tab and then run it (with the lightning bolt):
+```SQL
+# Indicate that we are using the deals database
+USE deals;  
+# Execute a test query  
+SELECT *
+FROM Companies
+WHERE CompanyName like "%Inc."
+```
+You should get a listing of companies that whose names end with "Inc."
+![Companies](img/img2_2.png)
+3. __Add a new query to the bottom of the script that sorts companies by `CompanyID`.__ The code looks like this:
+```
+# Select companies sorted by CompanyName
+SELECT *
+FROM Companies
+ORDER BY CompanyID
+```
+Run it. To run just the current statement, use the lightning bolt with the I on it. You will get an error message in the Action Output panel.   
+![Error](img/img2_3.png)
+4. __Debug the SQL Error.__ The error message pretty cryptic. What does `Error Code: 1064` mean? It's a syntax error. Can you spot the bug in the code? In this case it's pretty subtle: we are missing a semi-colon (`;`) at the end of each SELECT statement. Add the missing semi-colons and rerun:  
+![Fixed semi-colons](img/img2_4.png)
+5. __Use a where clause to merge data from multiple tables using the `WHERE` clause.__ Now let's add another query, this time with data from the Deal tables DealParts. We'll do it one clause at a time. In the `SELECT` clause list the `DealName`,`PartNumber`, and `DollarValue` columns. In the `FROM` clause list the `Deal` and `DealPart` tables. In the `WHERE` clause specify that `Deals.DealID = DealParts.DealID`.  
+![where join](img/img2_5.png)  
+Note that MySQL Workbench provides autocomplete support for column and table names. That helps a lot with avoiding typos.
+6. __Repeat the multi-table query but using `JOIN ON` instead of `WHERE` to match records in the two tables.__ This time we can omit the `WHERE` clause entirely.  
+![join on](img/img2_6.png)
+7. __Study the database schema to see more opportunities to join table.___  
+![Deals ERD](img/img2_7.png)  
+Each line connecting the tables indicates a potential join. Sometimes you will need to use multiple joins per query if two tables are not directly connected. For example, to list each company involved in each deal, we need two 'chained' joins like this:  
+![chained joins](img/img2_7.png)   
+The first join matches each company record to a player record. The second join matches each player record to a deal record.
+8. __Create a reusable view based on the previous select query.__ For complex queries with multiple joins, extensive logic in the where clauses, etc., it can be handy to create a runnable version of the query that can be called as needed. Add this to your script to create the new view:
+```
+# Create a view that matches companies to deals
+CREATE View CompanyDeals AS
+SELECT DealName,RoleCode,CompanyName
+FROM Companies
+	JOIN Players ON (Companies.CompanyID = Players.CompanyID)
+	JOIN Deals ON (Players.DealID = Deals.DealID)
+ORDER BY DealName;
+```
+The view acts as a virtual table that can be used anywhere a table name can be used. To see how this works add a SELECT query that selects all rows and columns from the new `CompanyDeals` view:
+```
+# A test of the CompanyDeals view
+SELECT * FROM CompanyDeals;
+```  
+9. __Create a view named `DealValues` that lists the DealID, total dollar value and number of parts for each deal.__ Don't forget to use your database schema map above. Also, be sure to include a comment (above the code) indicating what the view is intended to do. Also include a select query to demonstrate that the view works correctly.
+10. __Create a view named `DealSummary` that lists the DealID, DealName, number of players, total dollar value, and number of parts for each deal.__ Bonus: use a subquery to construct a comma-separated list of deal types for each deal. (Don't forget the comment and the select query.)
+11. __Create a view called `DealsByType` that lists TypeCode, number of deals, and total value of deals for each deal type.__ Each deal type should be listed, even if there are no deals of that type. (Don't forget the comment and the select query.)
+12. __Create a view called `DealPlayers` that lists the CompanyID, Name, and Role Code for each deal. Sort the players by the RoleSortOrder.__ Bonus: use a subquery to list the kinds of support provided to each player by each firm. (Don't forget the comment and the select query.)
+13. __Create a view called `DealsByFirm` that lists the FirmID, Name, number of deals, and total value of deals for each firm.__ Each firm should be listed, even if there are no deals for that firm. (Don't forget the comment and the select query.)
+14. __Save your script.__ Name the file `DealsPart2.sql`. It should be saved in the repository folder.
+15. __Sign your work.__ At the top of the script, add a comment that sates the purpose of the script, your name and the date.
+16. __Commit and sync to GitHub.__ Use the Git comment 'Completed Part 2' and push to GitHub.
+
+## Part 3: Adding Foreign Keys for Performance
+### Theory: You should know ...
+* The syntax for indicating adding foreign key indexes to existing tables
+
+### Practice: You be able to ...
+* Write SQL to add foreign keys to tables
+* Test your table designs using SELECT queries with joins.
+
+### Instructions
+1. __Confirm that the database is loaded and running.__ The steps are the same as before.
+2. __In MySQL Workbench, create a new script called `DealsPart3.sql` in the repository folder.__ At the top of the script add a header comment indicating what it does and signing your work.
+3. __Add foreign keys to each table as indicated by the ERD in part 2.__ The syntax given in the MySQL manual works best. The FKs will make our queries run faster but are not strictly needed for SQL joins to work.
+4. __Test you new table designs with a few SELECT queries.__ You will want to test each relationship shown on the ERD.
+5. __Commit and sync to GitHub.__ Don't forget to save your script. Use the Git comment 'Completed Part 3' and push to GitHub.
