@@ -117,17 +117,23 @@ SELECT * FROM CompanyDeals;
 15. __Sign your work.__ At the top of the script, add a comment that sates the purpose of the script, your name and the date.
 16. __Commit and sync to GitHub.__ Use the Git comment 'Completed Part 2' and push to GitHub.
 
-## Part 3: Adding Foreign Keys for Performance
+## Part 3: Foreign Keys
 ### Theory: You should know ...
 * The syntax for indicating adding foreign key indexes to existing tables
+* The performance implications of using foreign key constraints
 
 ### Practice: You be able to ...
 * Write SQL to add foreign keys to tables
-* Test your table designs using SELECT queries with joins.
+* Read an ERD to determine the required foreign keys
 
 ### Instructions
 1. __Confirm that the database is loaded and running.__ The steps are the same as before.
 2. __In MySQL Workbench, create a new script called `DealsPart3.sql` in the repository folder.__ At the top of the script add a header comment indicating what it does and signing your work.
-3. __Add foreign keys to each table as indicated by the ERD in part 2.__ The syntax given in the MySQL manual works best. The FKs will make our queries run faster but are not strictly needed for SQL joins to work.
-4. __Test you new table designs with a few SELECT queries.__ You will want to test each relationship shown on the ERD.
-5. __Commit and sync to GitHub.__ Don't forget to save your script. Use the Git comment 'Completed Part 3' and push to GitHub.
+3. __Add foreign keys to each table as indicated by the ERD in part 2.__ Fortunately, the FK columns already exist. We just have to mark them as FKs. Use the following template for each FK constraint:
+```
+ALTER TABLE `tablename`  
+    ADD FOREIGN KEY (`fk-column`)
+       REFERENCES `fk-tablename` (`fk-table-pk`);
+```  
+where `tablename`,`fk-column`, etc. are replaced with the particulars for the relationship. *Note that the new FK constraints will make our queries run faster but are not strictly needed for SQL joins to work. They can also, however, increase the memory used by the DBMS, so there may actually be rare cases where FK constraints are left undefined.*
+4. __Commit and sync to GitHub.__ Don't forget to save your script. Use the Git comment 'Completed Part 3' and push to GitHub.
