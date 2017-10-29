@@ -45,6 +45,8 @@ If all else fails, then RTFM for your version of MySQL and operating system.
 ![Commit Part 1](img/img11.png)
 ![Push Part 1](img/img12.png)
 
+**Do not continue to Part 2 until you are told to do so.**
+
 ## Part 2: Select Queries
 ### Theory: You should know ...
 * The common forms for SQL SELECT queries
@@ -116,6 +118,8 @@ SELECT * FROM CompanyDeals;
 14. __Save your script.__ Name the file `DealsPart2.sql`. It should be saved in the repository folder.
 15. __Sign your work.__ At the top of the script, add a comment that sates the purpose of the script, your name and the date.
 16. __Commit and sync to GitHub.__ Use the Git comment 'Completed Part 2' and push to GitHub.
+
+**Do not continue to Part 3 until you are told to do so.**
 
 ## Part 3: Foreign Keys
 ### Theory: You should know ...
