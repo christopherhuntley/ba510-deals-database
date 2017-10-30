@@ -94,7 +94,7 @@ Note that MySQL Workbench provides autocomplete support for column and table nam
 ![Deals ERD](img/img2_7.png)  
 Each line connecting the tables indicates a potential join. Sometimes you will need to use multiple joins per query if two tables are not directly connected. For example, to list each company involved in each deal, we need two 'chained' joins like this:  
 ![chained joins](img/img2_8.png)   
-The first join matches each company record to a player record. The second join matches each player record to a deal record.
+The first join matches each company record to a player record. The second join matches each player record to a deal record.  
 8. __Create a reusable view based on the previous select query.__ For complex queries with multiple joins, extensive logic in the where clauses, etc., it can be handy to create a runnable version of the query that can be called as needed. Add this to your script to create the new view:
 ```
 # Create a view that matches companies to deals
