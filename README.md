@@ -108,7 +108,7 @@ Note that MySQL Workbench provides autocomplete support for column and table nam
 6. __Repeat the multi-table query but using `JOIN ON` instead of `WHERE` to match records in the two tables.__  
 This time we can omit the `WHERE` clause entirely.  
 ![join on](img/img2_6.png)   
-7. __Study the database schema to see more opportunities to join table.___  
+7. __Study the database schema to see more opportunities to join table.__  
 ![Deals ERD](img/img2_7.png)  
 Each line connecting the tables indicates a potential join. Sometimes you will need to use multiple joins per query if two tables are not directly connected. For example, to list each company involved in each deal, we need two 'chained' joins like this:  
 ![chained joins](img/img2_8.png)    
@@ -130,7 +130,7 @@ The view acts as a virtual table that can be used anywhere a table name can be u
 SELECT * FROM CompanyDeals;
 ```  
 9. __Create a view named `DealValues` that lists the DealID, total dollar value and number of parts for each deal.__  
-Don't forget to use your database schema map above. Also, be sure to include a comment (above the code) indicating what the view is intended to do. Also include a select query to demonstrate that the view works correctly.
+Don't forget to use your database schema map when planning out your joins. Also, be sure to include a comment (above the code) indicating what the view is intended to do. Also include a select query to demonstrate that the view works correctly.
 10. __Create a view named `DealSummary` that lists the DealID, DealName, number of players, total dollar value, and number of parts for each deal.__  
 Bonus: use a subquery to construct a comma-separated list of deal types for each deal. (Don't forget the comment and the select query.)
 11. __Create a view called `DealsByType` that lists TypeCode, number of deals, and total value of deals for each deal type.__  
@@ -169,6 +169,6 @@ ALTER TABLE `tablename`
     ADD FOREIGN KEY (`fk-column`)
        REFERENCES `fk-tablename` (`fk-table-pk`);
 ```  
-where `tablename`,`fk-column`, etc. are replaced with the particulars for the relationship. *Note that the new FK constraints will make our queries run faster but are not strictly needed for SQL joins to work. They can also, however, increase the memory used by the DBMS, so there may actually be rare cases where FK constraints are best left undefined.*
+  where `tablename`,`fk-column`, etc. are replaced with the particulars for the relationship. *Note that the new FK constraints will make our queries run faster but are not strictly needed for SQL joins to work. They can also, however, increase the memory used by the DBMS, so there may actually be rare cases where FK constraints are best left undefined.*
 4. __Commit and sync to GitHub.__  
 Don't forget to save your script. Use the Git comment 'Completed Part 3' and push to GitHub.
