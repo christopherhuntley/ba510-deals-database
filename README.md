@@ -172,3 +172,18 @@ Fortunately, the FK columns already exist. We just have to mark them as FKs. Use
     where `tablename`,`fk-column`, etc. are replaced with the particulars for the relationship. *Note that the new FK constraints will make our queries run faster but are not strictly needed for SQL joins to work. They can also, however, increase the memory used by the DBMS, so there may actually be rare cases where FK constraints are best left undefined.*
 4. __Commit and sync to GitHub.__  
 Don't forget to save your script. Use the Git comment 'Completed Part 3' and push to GitHub.
+
+## Part 4: Jupyter
+### Theory: You should know about ...
+* The usage of SQL Alchemy and %sql magic within Jupyter
+
+### Practice: You be able to ...
+* Write a Jupyter Notebook
+* Connect to a MySQL database from MySQL
+
+### Instructions
+1. __Create a new Jupyter Notebook called `Deals_Part4`.__  
+Make sure you are in the right repository folder.
+2. __Use %sql magic to call each of the views created in part 2 from within your notebook cells.__  
+Display each query result as a table in your Notebook. Don't forget to include Markdown text to indicate the purpose/goal of each query. 
+3. __Save, Commit, and Push your work.__
