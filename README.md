@@ -73,7 +73,7 @@ FROM Companies
 WHERE CompanyName like "%Inc."
 ```
 You should get a listing of companies that whose names end with "Inc."
-![Companies](img/img2_2.png)
+![Companies](img/img2_2.png)  
 3. __Add a new query to the bottom of the script that sorts companies by `CompanyID`.__ The code looks like this:
 ```
 # Select companies sorted by CompanyName
