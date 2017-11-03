@@ -101,10 +101,10 @@ Run it. To run just the current statement, use the lightning bolt with the I on 
 4. __Debug the SQL Error.__  
 The error message pretty cryptic. What does `Error Code: 1064` mean? It's a syntax error. Can you spot the bug in the code? In this case it's pretty subtle: we are missing a semi-colon (`;`) at the end of each SELECT statement. Add the missing semi-colons and rerun:  
 ![Fixed semi-colons](img/img2_4.png)  
-5. __Use a where clause to merge data from multiple tables using the `WHERE` clause.__  
+5. __Use a where clause to merge data from multiple tables.__  
 Now let's add another query, this time with data from the Deal tables DealParts. We'll do it one clause at a time. In the `SELECT` clause list the `DealName`,`PartNumber`, and `DollarValue` columns. In the `FROM` clause list the `Deal` and `DealPart` tables. In the `WHERE` clause specify that `Deals.DealID = DealParts.DealID`.  
 ![where join](img/img2_5.png)  
-Note that MySQL Workbench provides autocomplete support for column and table names. That helps a lot with avoiding typos.
+Note that MySQL Workbench provides autocomplete support for column and table names. That helps a lot with avoiding typos.  
 6. __Repeat the multi-table query but using `JOIN ON` instead of `WHERE` to match records in the two tables.__  
 This time we can omit the `WHERE` clause entirely.  
 ![join on](img/img2_6.png)   
@@ -185,5 +185,5 @@ Don't forget to save your script. Use the Git comment 'Completed Part 3' and pus
 1. __Create a new Jupyter Notebook called `Deals_Part4`.__  
 Make sure you are in the right repository folder.
 2. __Use %sql magic to call each of the views created in part 2 from within your notebook cells.__  
-Display each query result as a table in your Notebook. Don't forget to include Markdown text to indicate the purpose/goal of each query. 
+Display each query result as a table in your Notebook. Don't forget to include Markdown text to indicate the purpose/goal of each query.
 3. __Save, Commit, and Push your work.__
