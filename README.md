@@ -142,7 +142,7 @@ Each firm should be listed, even if there are no deals for that firm. (Don't for
 14. __Save your script.__  
 Name the file `DealsPart2.sql`. It should be saved in the repository folder.
 15. __Sign your work.__  
-At the top of the script, add a comment that sates the purpose of the script, your name and the date.
+At the top of the script, add a comment that states the purpose of the script, your name and the date.
 16. __Commit and sync to GitHub.__  
 Use the Git comment 'Completed Part 2' and push to GitHub.
 
